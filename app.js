@@ -66,11 +66,35 @@ while (true) {
             console.log('You decided not to cut grass with push lawnmower.');
         }
     }
-
-    // Add an option to exit the game
-    input = prompt('Do you want to continue playing? [yes/no]: ');
-    if (input.toLowerCase() === 'no') {
-        console.log('Thanks for playing!');
-        break;
-    }
+        // Check if the user has enough money to buy battery-powered lawnmower
+        if (tool.toLowerCase() === 'push lawnmower' && money >= 250) {
+            input = prompt('landscaper: user can buy a battery-powered lawnmower for $250. [yes/no]: ');
+            if (input.toLowerCase() === 'yes') {
+                tool = 'battery-powered lawnmower';
+                money = money - 250;
+                console.log('You bought a battery-powered lawnmower.');
+            }
+            else if (input.toLowerCase() === 'no') {
+                console.log('You chose not to buy a battery-powered lawnmower.');
+            }
+        }
+    
+        // Check if the user is using battery-powered lawnmower
+        if (tool.toLowerCase() === 'battery-powered lawnmower') {
+            input = prompt('landscaper: user can use battery-powered lawnmower to cut grass [yes/no]: ');
+            if (input.toLowerCase() === 'yes') {
+                money += 100;
+                console.log(`You earned $100. Total money: $${money}.`);
+            }
+            else if (input.toLowerCase() === 'no') {
+                console.log('You decided not to cut grass with battery-powered lawnmower.');
+            }
+        }
+        
+        // Add an option to exit the game
+        input = prompt('Do you want to continue playing? [yes/no]: ');
+        if (input.toLowerCase() === 'no') {
+            console.log('Thanks for playing!');
+            break;
+        }
 }
