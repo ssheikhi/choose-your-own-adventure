@@ -90,7 +90,38 @@ while (true) {
                 console.log('You decided not to cut grass with battery-powered lawnmower.');
             }
         }
-        
+    
+        // Check if the user has enough money to hire a team of starving students
+        if (tool.toLowerCase() === 'battery-powered lawnmower' && money >= 500) {
+            input = prompt('landscaper: user can hire a team of starving students for $500. [yes/no]: ');
+            if (input.toLowerCase() === 'yes') {
+                tool = 'team of starving students';
+                money = money - 500;
+                console.log('You hired a team of starving students.');
+            }
+            else if (input.toLowerCase() === 'no') {
+                console.log('You chose not to hire a team.');
+            }
+        }
+    
+        // Check if the user is using a team of starving students
+        if (tool.toLowerCase() === 'team of starving students') {
+            input = prompt('landscaper: user can use a team to cut grass [yes/no]: ');
+            if (input.toLowerCase() === 'yes') {
+                money += 250;
+                console.log(`You earned $250. Total money: $${money}.`);
+            }
+            else if (input.toLowerCase() === 'no') {
+                console.log('You decided not to cut grass with a team.');
+            }
+        }
+    
+        // Check if the user wins the game (team of starving students and $1000)
+        if (tool.toLowerCase() === 'team of starving students' && money >= 1000) {
+            console.log('Congratulations! You have won the game with $1000 and a team of workers!');
+            break;
+        }
+    
         // Add an option to exit the game
         input = prompt('Do you want to continue playing? [yes/no]: ');
         if (input.toLowerCase() === 'no') {
