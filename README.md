@@ -1,6 +1,9 @@
 ## Landscaper Game
 
 This is a simple terminal-based game where you start a landscaping business with minimal tools and gradually earn money to buy better equipment, increasing your earnings per day.
+Complete Story is Written [here](https://pages.git.generalassemb.ly/mahuntington/3.0-additions/unit_1/landscaper.html)
+
+
 
 ### How to Play
 1. You start the game using your **teeth** to cut grass and earn **$1** per day.
